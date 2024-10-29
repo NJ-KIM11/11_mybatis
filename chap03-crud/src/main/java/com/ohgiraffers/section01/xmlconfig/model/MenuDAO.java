@@ -12,19 +12,19 @@ public class MenuDAO {
         return sqlSession.selectList("MenuMapper.selectAllMenu");
     }
 
-    public static MenuDTO selectMenuByCode(SqlSession sqlSession, int code) {
+    public MenuDTO selectMenuByCode(SqlSession sqlSession, int code) {
         return sqlSession.selectOne("MenuMapper.selectMenuByCode", code);
     }
 
-    public static int insertMenu(SqlSession sqlSession, MenuDTO menu) {
+    public int insertMenu(SqlSession sqlSession, MenuDTO menu) {
         return sqlSession.insert("MenuMapper.insertMenu", menu);
     }
 
-    public static int updateMenu(SqlSession sqlSession, MenuDTO menu) {
+    public int updateMenu(SqlSession sqlSession, MenuDTO menu) {
         return sqlSession.update("MenuMapper.updateMenu", menu);
     }
 
-    public static int deleteMenu(SqlSession sqlSession, int code) {
+    public int deleteMenu(SqlSession sqlSession, int code) {
         return sqlSession.delete("MenuMapper.deleteMenu", code);
     }
 

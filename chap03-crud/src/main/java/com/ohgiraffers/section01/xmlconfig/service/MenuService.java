@@ -25,7 +25,7 @@ public class MenuService {
 
     public MenuDTO selectMenuByCode(int code) {
         SqlSession sqlSession = getSqlSession();
-        MenuDTO menu = MenuDAO.selectMenuByCode(sqlSession, code);
+        MenuDTO menu = menuDAO.selectMenuByCode(sqlSession, code);
         sqlSession.close();
         return menu;
     }
@@ -33,7 +33,7 @@ public class MenuService {
     public boolean registMenu(MenuDTO menu) {
         SqlSession sqlSession = getSqlSession();
 
-        int result = MenuDAO.insertMenu(sqlSession, menu);
+        int result = menuDAO.insertMenu(sqlSession, menu);
 
         if(result > 0){
             sqlSession.commit();
@@ -49,7 +49,7 @@ public class MenuService {
     public boolean updateMenu(MenuDTO menu) {
         SqlSession sqlSession = getSqlSession();
 
-        int result = MenuDAO.updateMenu(sqlSession, menu);
+        int result = menuDAO.updateMenu(sqlSession, menu);
 
         if(result > 0){
             sqlSession.commit();
@@ -62,7 +62,7 @@ public class MenuService {
 
     public boolean deleteMenu(int code) {
         SqlSession sqlSession = getSqlSession();
-        int result = MenuDAO.deleteMenu(sqlSession, code);
+        int result = menuDAO.deleteMenu(sqlSession, code);
         if(result > 0){
             sqlSession.commit();
         }else {
